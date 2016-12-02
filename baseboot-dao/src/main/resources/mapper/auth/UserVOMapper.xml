@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.loyalove.baseboot.dao.auth.UserDAO">
+    <!--查询条件 -->
+    <select id="queryRoleByUserId" resultType="java.lang.String">
+        SELECT
+        r.role_name
+        FROM
+        `user_role` AS ur,
+        `role` AS r
+        WHERE
+        ur.user_id = #{userId}
+        AND ur.role_id = r.role_id
+    </select>
+    <!--删除条件 -->
+    <select id="queryPermissionsByUserId" resultType="java.lang.String">
+        SELECT
+        p.permission_name
+        FROM
+        `role_permission` AS rp,
+        `permission` AS p
+        WHERE
+        rp.role_id IN (
+        SELECT
+        ur.role_id
+        FROM
+        `user_role` AS ur,
+        `role` AS r
+        WHERE
+        ur.user_id = #{userId}
+        AND ur.role_id = r.role_id
+        )
+    </select>
+
+    <select id="queryUsers" resultType="com.loyalove.baseboot.pojo.UserPO">
+        SELECT
+        *
+        FROM
+        `user`
+        LIMIT #{pager.recordStart}, #{pager.pageSize}
+    </select>
+</mapper>

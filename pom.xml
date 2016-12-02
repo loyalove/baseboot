@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.loyalove</groupId>
+    <artifactId>baseboot-parent</artifactId>
+    <version>1.0.0</version>
+
+    <modules>
+        <module>baseboot-common</module>
+        <module>baseboot-pojo</module>
+        <module>baseboot-dao</module>
+        <module>baseboot-biz</module>
+        <module>baseboot-service</module>
+        <module>baseboot-webapi</module>
+    </modules>
+
+    <packaging>pom</packaging>
+
+    <name>baseboot-parent</name>
+
+    <description>loyalove for Spring Boot</description>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.4.2.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.7</java.version>
+
+        <baseboot.common.version>1.0.0</baseboot.common.version>
+        <baseboot.dao.version>1.0.0</baseboot.dao.version>
+        <baseboot.biz.version>1.0.0</baseboot.biz.version>
+        <baseboot.service.version>1.0.0</baseboot.service.version>
+        <baseboot.webapi.version>1.0.0</baseboot.webapi.version>
+        <baseboot.pojo.version>1.0.0</baseboot.pojo.version>
+
+        <baseboot.jxl.version>2.6.12</baseboot.jxl.version>
+        <baseboot.poi.version>3.13</baseboot.poi.version>
+        <baseboot.guava.version>18.0</baseboot.guava.version>
+        <baseboot.fastjson.version>1.2.11</baseboot.fastjson.version>
+        <baseboot.mybatis-spring-boot.version>1.1.1</baseboot.mybatis-spring-boot.version>
+        <baseboot.mybatis-generator.version>1.3.5</baseboot.mybatis-generator.version>
+
+        <baseboot.thymleaf.version>3.0.2.RELEASE</baseboot.thymleaf.version>
+
+        <baseboot.thymleaf-layout.version>2.1.1</baseboot.thymleaf-layout.version>
+
+        <baseboot.shiro.version>1.3.2</baseboot.shiro.version>
+
+        <baseboot.dubbo.version>2.5.3</baseboot.dubbo.version>
+
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!--子项目 S-->
+            <dependency>
+                <groupId>com.loyalove</groupId>
+                <artifactId>baseboot-pojo</artifactId>
+                <version>${baseboot.pojo.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.loyalove</groupId>
+                <artifactId>baseboot-common</artifactId>
+                <version>${baseboot.common.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.loyalove</groupId>
+                <artifactId>baseboot-service</artifactId>
+                <version>${baseboot.service.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.loyalove</groupId>
+                <artifactId>baseboot-dao</artifactId>
+                <version>${baseboot.dao.version}</version>
+            </dependency>
+            <!--子项目 E-->
+
+            <dependency>
+                <groupId>org.thymeleaf</groupId>
+                <artifactId>thymeleaf</artifactId>
+                <version>${baseboot.thymleaf.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>nz.net.ultraq.thymeleaf</groupId>
+                <artifactId>thymeleaf-layout-dialect</artifactId>
+                <version>${baseboot.thymleaf-layout.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.thymeleaf</groupId>
+                <artifactId>thymeleaf-spring4</artifactId>
+                <version>${baseboot.thymleaf.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.shiro</groupId>
+                <artifactId>shiro-all</artifactId>
+                <version>${baseboot.shiro.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${baseboot.guava.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${baseboot.fastjson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>${baseboot.mybatis-spring-boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.mybatis.generator</groupId>
+                <artifactId>mybatis-generator-core</artifactId>
+                <version>${baseboot.mybatis-generator.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>net.sourceforge.jexcelapi</groupId>
+                <artifactId>jxl</artifactId>
+                <version>${baseboot.jxl.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi</artifactId>
+                <version>${baseboot.poi.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi-ooxml</artifactId>
+                <version>${baseboot.poi.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>dubbo</artifactId>
+                <version>${baseboot.dubbo.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+</project>

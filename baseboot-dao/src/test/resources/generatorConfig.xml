@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+    <properties resource="config.properties"/>
+    <context id="context" defaultModelType="flat" targetRuntime="MyBatis3">
+
+        <!-- ToString方法 -->
+        <plugin type="org.mybatis.generator.plugins.ToStringPlugin"/>
+
+        <!--实体类名后缀-->
+        <plugin type="mybatis.generator.plugin.ModelRenamePlugin">
+            <property name="modelNameSuffix" value="PO"/>
+        </plugin>
+
+        <!--实体、类注释-->
+        <plugin type="mybatis.generator.plugin.ModelCommentPlugin"/>
+
+        <!--忽略表字段-->
+        <plugin type="mybatis.generator.plugin.TableIgnoreFiledPlugin">
+            <property name="raw_add_time" value="true"/>
+            <property name="raw_update_time" value="true"/>
+        </plugin>
+
+        <!--sqlMapper合并-->
+        <plugin type="mybatis.generator.plugin.SqlMapperMergeAblePlugin">
+            <property name="isMergeable" value="false"/>
+        </plugin>
+
+        <!-- 增加Serializable接口 -->
+        <plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>
+
+        <!-- 增加行界限接口 -->
+        <plugin type="org.mybatis.generator.plugins.RowBoundsPlugin"/>
+        
+        <!--dao注解插件-->
+        <plugin type="mybatis.generator.plugin.AnnotationPlugin">
+            <property name="@Repository" value="org.springframework.stereotype.Repository"/>
+            <property name="@Mapper" value="org.apache.ibatis.annotations.Mapper"/>
+        </plugin>
+
+        <!--分页插件-->
+        <plugin type="mybatis.generator.plugin.PaginationPlugin">
+            <property name="limitStart" value="limitStart"/>
+            <property name="limit" value="limit"/>
+        </plugin>
+
+        <!--关闭注释 -->
+        <commentGenerator>
+            <property name="suppressAllComments" value="true"/>
+            <property name="suppressDate" value="true"/>
+            <property name="addRemarkComments" value="true"/>
+        </commentGenerator>
+
+        <!--jdbc连接配置-->
+        <jdbcConnection driverClass="${jdbc.driver}"
+                        connectionURL="${jdbc.url}"
+                        userId="${jdbc.username}"
+                        password="${jdbc.password}">
+            <property name="schema" value="false"/>
+        </jdbcConnection>
+
+        <!--java-->
+        <javaModelGenerator targetPackage="${model.package}"
+                            targetProject="${user.dir}/${model.target.project}"/>
+        <sqlMapGenerator targetPackage="${mapper.package}"
+                         targetProject="${user.dir}/${mapper.target.project}"/>
+        <javaClientGenerator targetPackage="${dao.package}"
+                             targetProject="${user.dir}/${dao.target.project}"
+                             type="XMLMAPPER"/>
+
+
+        <!--表配置-->
+        <table tableName="user">
+            <generatedKey column="user_id" sqlStatement="MySql" identity="true"/>
+        </table>
+    </context>
+</generatorConfiguration>
