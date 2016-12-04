@@ -4,10 +4,13 @@ import com.loyalove.baseboot.config.shiro.MyShiroRealm;
 import org.apache.shiro.authc.credential.CredentialsMatcher;
 import org.apache.shiro.authc.credential.HashedCredentialsMatcher;
 import org.apache.shiro.cache.ehcache.EhCacheManager;
+import org.apache.shiro.session.mgt.SessionManager;
 import org.apache.shiro.spring.LifecycleBeanPostProcessor;
 import org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
+import org.apache.shiro.web.servlet.SimpleCookie;
+import org.apache.shiro.web.session.mgt.DefaultWebSessionManager;
 import org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator;
 import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.context.annotation.Bean;
@@ -56,8 +59,21 @@ public class ShiroConfig {
         return em;
     }
 
+    @Bean("sessionManager")
+    public SessionManager getSessionManager() {
+        //cookie创建
+        SimpleCookie cookie = new SimpleCookie();
+        cookie.setName("sid");
+        cookie.setHttpOnly(true);
+        //sessionManager创建
+        DefaultWebSessionManager sessionManager = new DefaultWebSessionManager();
+        sessionManager.setSessionIdCookie(cookie);
+        sessionManager.setSessionIdCookieEnabled(true);
+        return sessionManager;
+    }
+
     @Bean("credentialsMatcher")
-    public CredentialsMatcher getCredentialsMatcher(){
+    public CredentialsMatcher getCredentialsMatcher() {
         HashedCredentialsMatcher credentialsMatcher = new HashedCredentialsMatcher();
         credentialsMatcher.setHashAlgorithmName("md5");
         credentialsMatcher.setHashIterations(7);
@@ -74,12 +90,14 @@ public class ShiroConfig {
     }
 
     @Bean("securityManager")
-    public org.apache.shiro.mgt.SecurityManager getSecurityManager(MyShiroRealm myShiroRealm, EhCacheManager cacheManager) {
+    public org.apache.shiro.mgt.SecurityManager getSecurityManager(MyShiroRealm myShiroRealm, EhCacheManager cacheManager, SessionManager sessionManager) {
         DefaultWebSecurityManager securityManager = new DefaultWebSecurityManager();
         //设置自定义Realm
         securityManager.setRealm(myShiroRealm);
         //用户授权/认证信息Cache, 采用EhCache 缓存
         securityManager.setCacheManager(cacheManager);
+        //设置自定义SessionManager
+        securityManager.setSessionManager(sessionManager);
         return securityManager;
     }
 

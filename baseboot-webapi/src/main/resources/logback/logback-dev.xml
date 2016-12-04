@@ -1,20 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
 
-    <!--<include resource="org/springframework/boot/logging/logback/base.xml" />-->
-
-    <!--
-        设置控制台日志
-    -->
+    <!--设置控制台日志-->
     <appender name="CONSOLE_LOG" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
             <Pattern>%d{yyyy-MM-dd - HH:mm:ss} [%thread] %-5level %logger{36} - %msg %n</Pattern>
         </encoder>
         <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
-            <level>INFO</level>
+            <level>DEBUG</level>
         </filter>
     </appender>
 
+    <!--设置信息日志文件-->
     <appender name="INFO_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <File>${LOG_PATH}/info.log</File>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
@@ -51,6 +48,11 @@
     </appender>
 
     <root level="INFO">
+        <appender-ref ref="INFO_FILE" />
+        <appender-ref ref="ERROR_FILE" />
+    </root>
+
+    <root level="DEBUG">
         <appender-ref ref="INFO_FILE" />
         <appender-ref ref="ERROR_FILE" />
         <appender-ref ref="CONSOLE_LOG"/>

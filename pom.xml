@@ -14,6 +14,8 @@
         <module>baseboot-dao</module>
         <module>baseboot-biz</module>
         <module>baseboot-service</module>
+        <module>baseboot-server</module>
+        <module>baseboot-client</module>
         <module>baseboot-webapi</module>
     </modules>
 
@@ -39,6 +41,8 @@
         <baseboot.dao.version>1.0.0</baseboot.dao.version>
         <baseboot.biz.version>1.0.0</baseboot.biz.version>
         <baseboot.service.version>1.0.0</baseboot.service.version>
+        <baseboot.server.version>1.0.0</baseboot.server.version>
+        <baseboot.client.version>1.0.0</baseboot.client.version>
         <baseboot.webapi.version>1.0.0</baseboot.webapi.version>
         <baseboot.pojo.version>1.0.0</baseboot.pojo.version>
 
@@ -56,6 +60,8 @@
         <baseboot.shiro.version>1.3.2</baseboot.shiro.version>
 
         <baseboot.dubbo.version>2.5.3</baseboot.dubbo.version>
+
+        <baseboot.dubbo-starter.version>1.0.0</baseboot.dubbo-starter.version>
 
     </properties>
 
@@ -78,6 +84,24 @@
                 <groupId>com.loyalove</groupId>
                 <artifactId>baseboot-service</artifactId>
                 <version>${baseboot.service.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.loyalove</groupId>
+                <artifactId>baseboot-server</artifactId>
+                <version>${baseboot.server.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.loyalove</groupId>
+                <artifactId>baseboot-client</artifactId>
+                <version>${baseboot.client.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.loyalove</groupId>
+                <artifactId>baseboot-biz</artifactId>
+                <version>${baseboot.biz.version}</version>
             </dependency>
 
             <dependency>
@@ -151,11 +175,18 @@
                 <version>${baseboot.poi.version}</version>
             </dependency>
 
+            <!--<dependency>-->
+                <!--<groupId>com.alibaba</groupId>-->
+                <!--<artifactId>dubbo</artifactId>-->
+                <!--<version>${baseboot.dubbo.version}</version>-->
+            <!--</dependency>-->
+
             <dependency>
-                <groupId>com.alibaba</groupId>
-                <artifactId>dubbo</artifactId>
-                <version>${baseboot.dubbo.version}</version>
+                <groupId>com.loyalove.springboot</groupId>
+                <artifactId>spring-boot-starter-dubbo</artifactId>
+                <version>${baseboot.dubbo-starter.version}</version>
             </dependency>
+
         </dependencies>
     </dependencyManagement>
 

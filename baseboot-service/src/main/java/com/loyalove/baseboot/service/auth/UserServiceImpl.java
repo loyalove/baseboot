@@ -1,4 +1,4 @@
-package com.loyalove.baseboot.service.auth.impl;
+package com.loyalove.baseboot.service.auth;
 
 import com.loyalove.baseboot.common.model.Pager;
 import com.loyalove.baseboot.common.util.CollectionUtils;
@@ -7,7 +7,6 @@ import com.loyalove.baseboot.dao.auth.UserDAO;
 import com.loyalove.baseboot.pojo.UserExample;
 import com.loyalove.baseboot.pojo.UserPO;
 import com.loyalove.baseboot.service.BaseService;
-import com.loyalove.baseboot.service.auth.UserService;
 import com.loyalove.baseboot.vo.UserVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

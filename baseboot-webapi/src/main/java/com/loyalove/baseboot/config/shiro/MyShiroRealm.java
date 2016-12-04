@@ -7,7 +7,6 @@ import com.loyalove.baseboot.common.util.StringUtils;
 import com.loyalove.baseboot.pojo.UserPO;
 import com.loyalove.baseboot.service.auth.UserService;
 import com.loyalove.baseboot.vo.UserVO;
-import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;

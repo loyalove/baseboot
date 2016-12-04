@@ -1,4 +1,4 @@
-package com.loyalove.baseboot.service.auth.impl;
+package com.loyalove.baseboot.biz;
 
 import com.loyalove.baseboot.common.model.Pager;
 import com.loyalove.baseboot.common.util.CollectionUtils;
