@@ -4,7 +4,7 @@
     <!--设置控制台日志-->
     <appender name="CONSOLE_LOG" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
-            <Pattern>%d{yyyy-MM-dd - HH:mm:ss} [%thread] %-5level %logger{36} - %msg %n</Pattern>
+            <Pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36}- %msg %n</Pattern>
         </encoder>
         <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
             <level>DEBUG</level>
