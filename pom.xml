@@ -175,15 +175,9 @@
                 <version>${baseboot.poi.version}</version>
             </dependency>
 
-            <!--<dependency>-->
-                <!--<groupId>com.alibaba</groupId>-->
-                <!--<artifactId>dubbo</artifactId>-->
-                <!--<version>${baseboot.dubbo.version}</version>-->
-            <!--</dependency>-->
-
             <dependency>
                 <groupId>com.loyalove.springboot</groupId>
-                <artifactId>spring-boot-starter-dubbo</artifactId>
+                <artifactId>dubbo-spring-boot-starter</artifactId>
                 <version>${baseboot.dubbo-starter.version}</version>
             </dependency>
 

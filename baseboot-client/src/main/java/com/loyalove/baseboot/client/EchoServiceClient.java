@@ -7,14 +7,6 @@ import org.springframework.stereotype.Service;
 /**
  * Created by Loyal on 2016/12/3.
  */
-
-@Service
-public class EchoServiceClient {
-
-    @Reference
-    private EchoService echoService;
-
-    public String echo(String str) {
-        return echoService.echo(str);
-    }
+public interface EchoServiceClient {
+    String echo(String str);
 }

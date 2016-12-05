@@ -22,7 +22,8 @@
 
         <dependency>
             <groupId>com.loyalove.springboot</groupId>
-            <artifactId>spring-boot-starter-dubbo</artifactId>
+            <artifactId>dubbo-spring-boot-starter</artifactId>
         </dependency>
+
     </dependencies>
 </project>
