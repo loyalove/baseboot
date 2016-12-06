@@ -1,4 +1,4 @@
-package com.loyalove.baseboot.web.util;
+package com.loyalove.baseboot.app.util;
 
 /**
  * Title: UserStatusEnum.java

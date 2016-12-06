@@ -1,6 +1,6 @@
-package com.loyalove.baseboot.web.config;
+package com.loyalove.baseboot.app.config;
 
-import com.loyalove.baseboot.web.config.shiro.MyShiroRealm;
+import com.loyalove.baseboot.app.config.shiro.MyShiroRealm;
 import org.apache.shiro.authc.credential.CredentialsMatcher;
 import org.apache.shiro.authc.credential.HashedCredentialsMatcher;
 import org.apache.shiro.cache.ehcache.EhCacheManager;

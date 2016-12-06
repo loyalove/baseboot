@@ -1,8 +1,8 @@
 package com.loyalove.baseboot.web.config.shiro;
 
 import com.loyalove.baseboot.common.enums.UserStatusEnum;
-import com.loyalove.baseboot.web.util.SessionKeys;
-import com.loyalove.baseboot.web.util.SessionUtil;
+import com.loyalove.baseboot.app.util.SessionKeys;
+import com.loyalove.baseboot.app.util.SessionUtil;
 import com.loyalove.baseboot.common.util.StringUtils;
 import com.loyalove.baseboot.pojo.UserPO;
 import com.loyalove.baseboot.api.auth.UserService;
@@ -60,7 +60,7 @@ public class MyShiroRealm extends AuthorizingRealm {
         } else if (StringUtils.equals(user.getStatus(), UserStatusEnum.LOCKED.code())) {
             throw new LockedAccountException("用户已锁定");
         } else if (StringUtils.equals(user.getStatus(), UserStatusEnum.INIT.code())) {
-            throw new NoActiveAccountException("用户未激活");
+            throw new com.loyalove.baseboot.app.config.shiro.NoActiveAccountException("用户未激活");
         }
         //保存登录用户到Session
         SessionUtil.setAttribute(SessionKeys.CURR_USER, user);

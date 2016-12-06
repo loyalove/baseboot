@@ -1,10 +1,8 @@
-package com.loyalove.baseboot.web.controller.auth;
+package com.loyalove.baseboot.app.controller.auth;
 
-import com.loyalove.baseboot.common.model.Pager;
-import com.loyalove.baseboot.web.controller.BaseController;
-import com.loyalove.baseboot.dao.base.UserMapper;
-import com.loyalove.baseboot.pojo.UserExample;
 import com.loyalove.baseboot.api.auth.UserService;
+import com.loyalove.baseboot.app.controller.BaseController;
+import com.loyalove.baseboot.common.model.Pager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -26,17 +24,11 @@ public class UserController extends BaseController {
     @Autowired
     UserService userService;
 
-    @Autowired
-    UserMapper userMapper;
-
     @RequestMapping("")
     public Object queryUsers(Pager pager) {
         Map<String, Object> result = new HashMap<>();
-        UserExample example = new UserExample();
-        example.setLimit(1);
-        example.setLimitStart(0);
-        result.put("list", userMapper.selectByExample(example));
-        result.put("count", userMapper.countByExample(example));
+        result.put("list", userService.queryUsers(new Pager()));
+        result.put("count", 0);
         return result;
     }
 }

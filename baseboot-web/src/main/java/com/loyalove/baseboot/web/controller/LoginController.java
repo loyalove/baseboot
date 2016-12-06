@@ -1,7 +1,7 @@
-package com.loyalove.baseboot.web.controller;
+package com.loyalove.baseboot.app.controller;
 
 import com.loyalove.baseboot.common.model.Result;
-import com.loyalove.baseboot.web.config.shiro.NoActiveAccountException;
+import com.loyalove.baseboot.app.config.shiro.NoActiveAccountException;
 import com.loyalove.baseboot.pojo.UserPO;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
