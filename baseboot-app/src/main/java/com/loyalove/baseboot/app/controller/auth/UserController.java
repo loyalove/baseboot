@@ -1,8 +1,10 @@
 package com.loyalove.baseboot.app.controller.auth;
 
 import com.loyalove.baseboot.api.auth.UserService;
+import com.loyalove.baseboot.app.auth.UserServiceClient;
 import com.loyalove.baseboot.app.controller.BaseController;
 import com.loyalove.baseboot.common.model.Pager;
+import com.loyalove.baseboot.common.model.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -22,13 +24,13 @@ import java.util.Map;
 @RequestMapping("/user")
 public class UserController extends BaseController {
     @Autowired
-    UserService userService;
+    UserServiceClient userServiceClient;
 
     @RequestMapping("")
-    public Object queryUsers(Pager pager) {
-        Map<String, Object> result = new HashMap<>();
-        result.put("list", userService.queryUsers(new Pager()));
-        result.put("count", 0);
+    public Result queryUsers(Pager pager) {
+        Result result = Result.getResultSuccess("查询成功");
+        result.setPager(pager);
+        result.setResult(userServiceClient.queryUsers(pager));
         return result;
     }
 }

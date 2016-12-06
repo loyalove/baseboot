@@ -1,4 +1,4 @@
-package com.loyalove.baseboot.service;
+package com.loyalove.baseboot;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -9,8 +9,6 @@ import org.springframework.context.annotation.ComponentScan;
  * Created by Loyal on 2016/12/3.
  */
 @SpringBootApplication
-@MapperScan("com.loyalove.baseboot.dao")
-@ComponentScan("com.loyalove.baseboot")
 public class Server {
 
     public static void main(String[] args) throws InterruptedException {

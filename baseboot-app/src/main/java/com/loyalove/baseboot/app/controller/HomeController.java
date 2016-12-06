@@ -1,8 +1,9 @@
 package com.loyalove.baseboot.app.controller;
 
-import org.springframework.stereotype.Controller;
+import com.loyalove.baseboot.common.model.Result;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  * Title: HomeController.java
@@ -12,12 +13,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @author: sailuo@yiji.com
  * @date: 2016-11-29 16:03
  */
-@Controller
+@RestController
 public class HomeController extends BaseController {
 
     @RequestMapping(value = {"", "/"})
-    public String home(Model model) {
-        return "home";
+    public Result home(Model model) {
+        return Result.getResultSuccess("欢迎");
     }
 
 }

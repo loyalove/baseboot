@@ -1,12 +1,12 @@
 package com.loyalove.baseboot.app.auth.impl;
 
 import com.alibaba.dubbo.config.annotation.Reference;
+import com.alibaba.dubbo.config.annotation.Service;
 import com.loyalove.baseboot.api.auth.UserService;
 import com.loyalove.baseboot.app.auth.UserServiceClient;
 import com.loyalove.baseboot.common.model.Pager;
 import com.loyalove.baseboot.pojo.UserPO;
 import com.loyalove.baseboot.vo.UserVO;
-import org.springframework.stereotype.Component;
 
 import java.util.List;
 
@@ -18,7 +18,7 @@ import java.util.List;
  * @author: sailuo@yiji.com
  * @date: 2016-12-06 11:09
  */
-@Component
+@Service
 public class UserServiceClientImpl implements UserServiceClient {
 
     @Reference

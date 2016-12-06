@@ -19,7 +19,7 @@ import java.util.List;
  * @author: sailuo@yiji.com
  * @date: 2016-11-30 8:56
  */
-@Service
+@Service(interfaceClass = UserService.class, version = "1.0")
 public class UserServiceImpl extends BaseService implements UserService {
 
     @Autowired(required = true)

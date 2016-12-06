@@ -28,8 +28,8 @@ import java.util.Map;
  * @author: sailuo@yiji.com
  * @date: 2016-11-28 16:15
  */
-//@SpringBootConfiguration
-//@AutoConfigureAfter(UserServiceClient.class)
+@SpringBootConfiguration
+@AutoConfigureAfter(UserServiceClient.class)
 public class ShiroConfig {
     private static Map<String, String> filterChainDefinitionMap = new LinkedHashMap();
 

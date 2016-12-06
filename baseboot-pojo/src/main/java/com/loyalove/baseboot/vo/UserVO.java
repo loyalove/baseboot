@@ -13,6 +13,9 @@ import java.util.Set;
  * @date: 2016-11-30 9:46
  */
 public class UserVO {
+
+    private static final long serialVersionUID = 1L;
+
     private UserPO userPO;
 
     private Set<String> roles;

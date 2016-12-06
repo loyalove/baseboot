@@ -20,7 +20,7 @@ import java.util.List;
 @Service
 public class UserServiceClientImpl implements UserServiceClient {
 
-    @Reference
+    @Reference(interfaceClass = UserService.class, version = "1.0")
     private UserService userService;
 
     /**

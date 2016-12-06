@@ -22,11 +22,6 @@ import java.util.List;
 @SpringBootApplication
 public class WebStart {
     public static void main(String[] args) {
-        ConfigurableApplicationContext context = new SpringApplicationBuilder()
-                .sources(WebStart.class)
-                .web(false)
-                .run(args);
-        UserServiceClient bean = context.getBean(UserServiceClient.class);
-        List<UserPO> userPOs = bean.queryUsers(new Pager());
+        ConfigurableApplicationContext context = SpringApplication.run(WebStart.class, args);
     }
 }

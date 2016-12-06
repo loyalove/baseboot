@@ -1,12 +1,13 @@
 package com.loyalove.baseboot.web.client.auth.impl;
 
 import com.alibaba.dubbo.config.annotation.Reference;
+import com.alibaba.dubbo.rpc.service.EchoService;
 import com.loyalove.baseboot.api.auth.UserService;
 import com.loyalove.baseboot.common.model.Pager;
 import com.loyalove.baseboot.pojo.UserPO;
 import com.loyalove.baseboot.vo.UserVO;
 import com.loyalove.baseboot.web.client.auth.UserServiceClient;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -18,10 +19,10 @@ import java.util.List;
  * @author: sailuo@yiji.com
  * @date: 2016-12-06 11:09
  */
-@Component
+@Service
 public class UserServiceClientImpl implements UserServiceClient {
 
-    @Reference
+    @Reference(interfaceClass = UserService.class, version = "1.0")
     private UserService userService;
 
     /**
