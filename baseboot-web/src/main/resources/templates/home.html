@@ -17,6 +17,7 @@
         .layui-header .layui-main .logo {
             height: 60px;
         }
+
         .layui-header .layui-main .logo img {
             max-height: 60px;
         }
@@ -58,7 +59,30 @@
     </div>
     <div class="layui-body">
         <div class="layui-main">
-            首页
+            <table class="layui-table">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>用户名</th>
+                    <th>密码</th>
+                    <th>昵称</th>
+                    <th>邮件</th>
+                    <th>电话</th>
+                    <th>状态</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="user : ${users}">
+                    <td th:text="${userStat.count}"></td>
+                    <td th:text="${user.username}"></td>
+                    <td th:text="${user.password}"></td>
+                    <td th:text="${user.nickname}"></td>
+                    <td th:text="${user.email}"></td>
+                    <td th:text="${user.phoneNum}"></td>
+                    <td th:text="${user.status}"></td>
+                </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 
