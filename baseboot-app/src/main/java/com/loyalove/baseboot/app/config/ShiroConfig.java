@@ -63,7 +63,7 @@ public class ShiroConfig {
     public SessionManager getSessionManager() {
         //cookie创建
         SimpleCookie cookie = new SimpleCookie();
-        cookie.setName("sid");
+        cookie.setName("app_sid");
         cookie.setHttpOnly(true);
         //sessionManager创建
         DefaultWebSessionManager sessionManager = new DefaultWebSessionManager();
