@@ -1,4 +1,4 @@
-package com.loyalove.baseboot.web.util;
+package com.loyalove.baseboot.app.util;
 
 import com.loyalove.baseboot.common.util.CollectionUtils;
 import com.loyalove.baseboot.common.util.StringUtils;

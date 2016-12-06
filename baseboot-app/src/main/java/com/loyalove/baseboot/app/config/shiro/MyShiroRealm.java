@@ -1,8 +1,8 @@
-package com.loyalove.baseboot.web.config.shiro;
+package com.loyalove.baseboot.app.config.shiro;
 
 import com.loyalove.baseboot.common.enums.UserStatusEnum;
-import com.loyalove.baseboot.web.util.SessionKeys;
-import com.loyalove.baseboot.web.util.SessionUtil;
+import com.loyalove.baseboot.app.util.SessionKeys;
+import com.loyalove.baseboot.app.util.SessionUtil;
 import com.loyalove.baseboot.common.util.StringUtils;
 import com.loyalove.baseboot.pojo.UserPO;
 import com.loyalove.baseboot.api.auth.UserService;

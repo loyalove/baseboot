@@ -1,4 +1,4 @@
-package com.loyalove.baseboot.web.config.shiro;
+package com.loyalove.baseboot.app.config.shiro;
 
 import org.apache.shiro.authc.AccountException;
 

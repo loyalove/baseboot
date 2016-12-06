@@ -1,7 +1,7 @@
-package com.loyalove.baseboot.web.controller.auth;
+package com.loyalove.baseboot.app.controller.auth;
 
 import com.loyalove.baseboot.common.model.Pager;
-import com.loyalove.baseboot.web.controller.BaseController;
+import com.loyalove.baseboot.app.controller.BaseController;
 import com.loyalove.baseboot.dao.base.UserMapper;
 import com.loyalove.baseboot.pojo.UserExample;
 import com.loyalove.baseboot.api.auth.UserService;
