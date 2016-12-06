@@ -1,6 +1,7 @@
-package com.loyalove.baseboot.app.config;
+package com.loyalove.baseboot.web.config;
 
-import com.loyalove.baseboot.app.config.shiro.MyShiroRealm;
+import com.loyalove.baseboot.web.client.auth.UserServiceClient;
+import com.loyalove.baseboot.web.config.shiro.MyShiroRealm;
 import org.apache.shiro.authc.credential.CredentialsMatcher;
 import org.apache.shiro.authc.credential.HashedCredentialsMatcher;
 import org.apache.shiro.cache.ehcache.EhCacheManager;
@@ -13,6 +14,7 @@ import org.apache.shiro.web.servlet.SimpleCookie;
 import org.apache.shiro.web.session.mgt.DefaultWebSessionManager;
 import org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator;
 import org.springframework.boot.SpringBootConfiguration;
+import org.springframework.boot.autoconfigure.AutoConfigureAfter;
 import org.springframework.context.annotation.Bean;
 
 import java.util.LinkedHashMap;
@@ -26,7 +28,8 @@ import java.util.Map;
  * @author: sailuo@yiji.com
  * @date: 2016-11-28 16:15
  */
-@SpringBootConfiguration
+//@SpringBootConfiguration
+//@AutoConfigureAfter(UserServiceClient.class)
 public class ShiroConfig {
     private static Map<String, String> filterChainDefinitionMap = new LinkedHashMap();
 

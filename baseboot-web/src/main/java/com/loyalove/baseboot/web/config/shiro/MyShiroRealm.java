@@ -1,12 +1,12 @@
 package com.loyalove.baseboot.web.config.shiro;
 
 import com.loyalove.baseboot.common.enums.UserStatusEnum;
-import com.loyalove.baseboot.app.util.SessionKeys;
-import com.loyalove.baseboot.app.util.SessionUtil;
 import com.loyalove.baseboot.common.util.StringUtils;
 import com.loyalove.baseboot.pojo.UserPO;
-import com.loyalove.baseboot.api.auth.UserService;
 import com.loyalove.baseboot.vo.UserVO;
+import com.loyalove.baseboot.web.client.auth.UserServiceClient;
+import com.loyalove.baseboot.web.util.SessionKeys;
+import com.loyalove.baseboot.web.util.SessionUtil;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
@@ -26,17 +26,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class MyShiroRealm extends AuthorizingRealm {
 
     @Autowired
-    UserService userService;
+    UserServiceClient userServiceClient;
 
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) {
         UserPO userPO = (UserPO) SessionUtil.getAttribute(SessionKeys.CURR_USER);
-        UserVO userVO = userService.queryUserRolePermission(userPO);
+        UserVO userVO = userServiceClient.queryUserRolePermission(userPO);
         return getAuthorizationInfo(userVO);
     }
 
     /**
      * 获取认证信息
+     *
      * @param userVO
      * @return
      */
@@ -54,13 +55,13 @@ public class MyShiroRealm extends AuthorizingRealm {
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authenticationToken) throws AuthenticationException {
         String username = (String) authenticationToken.getPrincipal();
         //查询用户对象
-        UserPO user = userService.queryUserByName(username);
+        UserPO user = userServiceClient.queryUserByName(username);
         if (null == user) {
             throw new UnknownAccountException("用户名不存在");
         } else if (StringUtils.equals(user.getStatus(), UserStatusEnum.LOCKED.code())) {
             throw new LockedAccountException("用户已锁定");
         } else if (StringUtils.equals(user.getStatus(), UserStatusEnum.INIT.code())) {
-            throw new com.loyalove.baseboot.app.config.shiro.NoActiveAccountException("用户未激活");
+            throw new NoActiveAccountException("用户未激活");
         }
         //保存登录用户到Session
         SessionUtil.setAttribute(SessionKeys.CURR_USER, user);

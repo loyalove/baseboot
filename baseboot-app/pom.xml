@@ -20,11 +20,6 @@
         </dependency>
 
         <dependency>
-            <groupId>com.loyalove</groupId>
-            <artifactId>baseboot-common</artifactId>
-        </dependency>
-
-        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
             <optional>true</optional>
@@ -37,12 +32,12 @@
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+            <artifactId>spring-boot-starter-logging</artifactId>
         </dependency>
 
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-logging</artifactId>
+            <groupId>com.loyalove.springboot</groupId>
+            <artifactId>dubbo-spring-boot-starter</artifactId>
         </dependency>
 
         <dependency>
@@ -71,7 +66,7 @@
     </dependencies>
 
     <build>
-        <finalName>baseboot</finalName>
+        <finalName>baseboot-app</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>

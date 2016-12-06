@@ -1,4 +1,4 @@
-package com.loyalove.baseboot.app.util;
+package com.loyalove.baseboot.web.util;
 
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.session.Session;

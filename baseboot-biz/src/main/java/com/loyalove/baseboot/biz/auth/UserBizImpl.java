@@ -1,13 +1,12 @@
-package com.loyalove.baseboot.biz;
+package com.loyalove.baseboot.biz.auth;
 
+import com.loyalove.baseboot.biz.BaseBiz;
 import com.loyalove.baseboot.common.model.Pager;
 import com.loyalove.baseboot.common.util.CollectionUtils;
-import com.loyalove.baseboot.dao.base.UserMapper;
 import com.loyalove.baseboot.dao.auth.UserDAO;
+import com.loyalove.baseboot.dao.base.UserMapper;
 import com.loyalove.baseboot.pojo.UserExample;
 import com.loyalove.baseboot.pojo.UserPO;
-import com.loyalove.baseboot.api.BaseService;
-import com.loyalove.baseboot.api.auth.UserService;
 import com.loyalove.baseboot.vo.UserVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,7 +22,7 @@ import java.util.List;
  * @date: 2016-11-30 8:56
  */
 @Service
-public class UserServiceImpl extends BaseService implements UserService {
+public class UserBizImpl extends BaseBiz implements UserBiz {
 
     @Autowired
     UserMapper userMapper;

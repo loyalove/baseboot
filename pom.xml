@@ -15,9 +15,9 @@
         <module>baseboot-biz</module>
         <module>baseboot-service</module>
         <module>baseboot-api</module>
-        <module>baseboot-client</module>
         <module>baseboot-web</module>
         <module>baseboot-app</module>
+        <module>baseboot-client</module>
     </modules>
 
     <packaging>pom</packaging>
@@ -70,6 +70,13 @@
     <dependencyManagement>
         <dependencies>
             <!--子项目 S-->
+
+            <dependency>
+                <groupId>com.loyalove</groupId>
+                <artifactId>baseboot-common</artifactId>
+                <version>${baseboot.common.version}</version>
+            </dependency>
+
             <dependency>
                 <groupId>com.loyalove</groupId>
                 <artifactId>baseboot-pojo</artifactId>
@@ -78,9 +85,16 @@
 
             <dependency>
                 <groupId>com.loyalove</groupId>
-                <artifactId>baseboot-common</artifactId>
-                <version>${baseboot.common.version}</version>
+                <artifactId>baseboot-dao</artifactId>
+                <version>${baseboot.dao.version}</version>
             </dependency>
+
+            <dependency>
+                <groupId>com.loyalove</groupId>
+                <artifactId>baseboot-biz</artifactId>
+                <version>${baseboot.biz.version}</version>
+            </dependency>
+
 
             <dependency>
                 <groupId>com.loyalove</groupId>
@@ -92,18 +106,6 @@
                 <groupId>com.loyalove</groupId>
                 <artifactId>baseboot-api</artifactId>
                 <version>${baseboot.api.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>com.loyalove</groupId>
-                <artifactId>baseboot-biz</artifactId>
-                <version>${baseboot.biz.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>com.loyalove</groupId>
-                <artifactId>baseboot-dao</artifactId>
-                <version>${baseboot.dao.version}</version>
             </dependency>
 
             <dependency>

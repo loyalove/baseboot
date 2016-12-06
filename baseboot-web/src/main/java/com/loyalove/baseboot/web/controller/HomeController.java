@@ -1,4 +1,4 @@
-package com.loyalove.baseboot.app.controller;
+package com.loyalove.baseboot.web.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

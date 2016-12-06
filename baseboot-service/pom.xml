@@ -17,7 +17,7 @@
 
         <dependency>
             <groupId>com.loyalove</groupId>
-            <artifactId>baseboot-dao</artifactId>
+            <artifactId>baseboot-biz</artifactId>
         </dependency>
 
         <dependency>
