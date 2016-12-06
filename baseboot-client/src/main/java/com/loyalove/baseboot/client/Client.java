@@ -1,6 +1,7 @@
 package com.loyalove.baseboot.client;
 
 import com.google.gson.Gson;
+import com.loyalove.baseboot.common.model.Pager;
 import com.loyalove.baseboot.pojo.UserPO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,7 +22,7 @@ public class Client {
     public static void main(String[] args) {
         ConfigurableApplicationContext run = SpringApplication.run(Client.class, args);
         UserServiceClient bean = run.getBean(UserServiceClient.class);
-        List<UserPO> userPOs = bean.queryAll();
+        List<UserPO> userPOs = bean.queryUsers(new Pager());
         logger.info("获得数据：{}", new Gson().toJson(userPOs));
     }
 }

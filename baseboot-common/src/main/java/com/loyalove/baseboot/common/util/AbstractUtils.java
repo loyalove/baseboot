@@ -3,11 +3,10 @@ package com.loyalove.baseboot.common.util;
 import org.apache.log4j.Logger;
 
 /**
- * ranmin-zhouyuhong
- * 2016/11/15
+ * Created by sailuo on 2016/12/6.
  */
-abstract class AbstractUtils {
+public abstract class AbstractUtils {
 
-    static final Logger logger = Logger.getLogger(AbstractUtils.class);
+    protected static final Logger logger = Logger.getLogger(AbstractUtils.class);
 
 }

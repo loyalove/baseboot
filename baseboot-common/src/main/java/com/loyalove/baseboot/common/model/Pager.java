@@ -5,10 +5,14 @@ package com.loyalove.baseboot.common.model;
  * @date 2016/5/24 16:31
  */
 
+import java.io.Serializable;
+
 /**
  * 分页类Pager
  */
-public class Pager {
+public class Pager implements Serializable{
+
+    private static final long serialVersionUID = 1L;
 
     // 默认每页记录数
     private static final Integer DEFAULT_PAGE_SIZE = 10;

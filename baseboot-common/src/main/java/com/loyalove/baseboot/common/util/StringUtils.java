@@ -1,7 +1,6 @@
 package com.loyalove.baseboot.common.util;
 
 
-import org.springframework.util.Assert;
 
 import java.io.UnsupportedEncodingException;
 import java.util.*;
@@ -226,8 +225,7 @@ public class StringUtils {
 		if (endIndex == 0 && beginIndex == 0) {
 			return 0;
 		}
-		Assert.isTrue(beginIndex >= 0 && beginIndex < endIndex);
-		Assert.isTrue(endIndex <= string.length());
+
 		int i = 0;
 		while (true) {
 			beginIndex = string.indexOf(s, beginIndex);
@@ -306,8 +304,7 @@ public class StringUtils {
 		if (endIndex == 0 && beginIndex == 0) {
 			return 0;
 		}
-		Assert.isTrue(beginIndex >= 0 && beginIndex < endIndex);
-		Assert.isTrue(endIndex <= string.length());
+
 		int i = 0;
 		while (true) {
 			beginIndex = string.indexOf(s, beginIndex);
@@ -395,8 +392,7 @@ public class StringUtils {
 		if (lastBeginIndex == 0 && lastEndIndex == 0) {
 			return 0;
 		}
-		Assert.isTrue(lastBeginIndex <= string.length() && lastBeginIndex > lastEndIndex);
-		Assert.isTrue(lastEndIndex >= 0);
+
 		int i = 0;
 		StringBuilder builder = new StringBuilder(string);
 		builder.delete(0, lastEndIndex);
@@ -434,7 +430,7 @@ public class StringUtils {
 		if (string == null) {
 			return -1;
 		}
-		Assert.isTrue(count > 0);
+
 		int index = -s.length();
 		for (int i = 0; i < count; i++) {
 			index = string.indexOf(s, index + s.length());
@@ -460,7 +456,7 @@ public class StringUtils {
 		if (string == null) {
 			return -1;
 		}
-		Assert.isTrue(count > 0);
+
 		int index = string.length();
 		for (int i = 0; i < count; i++) {
 			index = string.lastIndexOf(s, index - 1);

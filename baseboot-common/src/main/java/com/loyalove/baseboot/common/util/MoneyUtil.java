@@ -3,7 +3,6 @@ package com.loyalove.baseboot.common.util;
 
 import com.google.common.math.LongMath;
 import com.loyalove.baseboot.common.model.Money;
-import org.springframework.util.Assert;
 
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
@@ -26,9 +25,7 @@ public class MoneyUtil {
     }
 
     public static Money round(Money money, Money roundMoney, RoundingMode roundingMode) {
-        Assert.notNull(money, "money不能为空");
-        Assert.notNull(roundMoney, "roundMoney不能为空");
-        Assert.notNull(roundingMode, "roundingMode不能为空");
+
         long multiple = LongMath.divide(money.getCent(), roundMoney.getCent(), roundingMode);
         long newCent = LongMath.checkedMultiply(multiple, roundMoney.getCent());
         return money.newMoneyWithSameCurrency(newCent);

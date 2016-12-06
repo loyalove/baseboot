@@ -17,7 +17,7 @@
 
         <dependency>
             <groupId>com.loyalove</groupId>
-            <artifactId>baseboot-server</artifactId>
+            <artifactId>baseboot-api</artifactId>
         </dependency>
 
         <dependency>

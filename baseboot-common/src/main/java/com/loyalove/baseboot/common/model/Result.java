@@ -1,5 +1,7 @@
 package com.loyalove.baseboot.common.model;
 
+import java.io.Serializable;
+
 /**
  * Title: Result.java
  * Description: Result
@@ -9,7 +11,10 @@ package com.loyalove.baseboot.common.model;
  * @date: 2016-11-29 18:16
  */
 
-public class Result {
+public class Result implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
     //成功
     private static final String STATUS_OK = "OK";
     //失败

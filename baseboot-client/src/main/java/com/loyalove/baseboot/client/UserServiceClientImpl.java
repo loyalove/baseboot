@@ -1,8 +1,10 @@
 package com.loyalove.baseboot.client;
 
 import com.alibaba.dubbo.config.annotation.Reference;
+import com.loyalove.baseboot.api.auth.UserService;
+import com.loyalove.baseboot.common.model.Pager;
 import com.loyalove.baseboot.pojo.UserPO;
-import com.loyalove.baseboot.server.UserService;
+import com.loyalove.baseboot.vo.UserVO;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -22,11 +24,29 @@ public class UserServiceClientImpl implements UserServiceClient {
     private UserService userService;
 
     /**
-     * 查询用户列表
+     * 根据用户名查询用户
+     * @param username
      * @return
      */
-    @Override
-    public List<UserPO> queryAll() {
-        return userService.queryAll();
+    public UserPO queryUserByName(String username) {
+        return userService.queryUserByName(username);
+    }
+
+    /**
+     * 根据用户查询角色和权限
+     * @param userPO
+     * @return
+     */
+    public UserVO queryUserRolePermission(UserPO userPO) {
+        return userService.queryUserRolePermission(userPO);
+    }
+
+    /**
+     * 查询用户列表
+     * @return
+     * @param pager
+     */
+    public List<UserPO> queryUsers(Pager pager) {
+        return userService.queryUsers(pager);
     }
 }

@@ -14,9 +14,10 @@
         <module>baseboot-dao</module>
         <module>baseboot-biz</module>
         <module>baseboot-service</module>
-        <module>baseboot-server</module>
+        <module>baseboot-api</module>
         <module>baseboot-client</module>
-        <module>baseboot-webapi</module>
+        <module>baseboot-web</module>
+        <module>baseboot-app</module>
     </modules>
 
     <packaging>pom</packaging>
@@ -38,13 +39,14 @@
         <java.version>1.7</java.version>
 
         <baseboot.common.version>1.0.0</baseboot.common.version>
+        <baseboot.pojo.version>1.0.0</baseboot.pojo.version>
         <baseboot.dao.version>1.0.0</baseboot.dao.version>
         <baseboot.biz.version>1.0.0</baseboot.biz.version>
         <baseboot.service.version>1.0.0</baseboot.service.version>
-        <baseboot.server.version>1.0.0</baseboot.server.version>
+        <baseboot.api.version>1.0.0</baseboot.api.version>
+        <baseboot.web.version>1.0.0</baseboot.web.version>
+        <baseboot.app.version>1.0.0</baseboot.app.version>
         <baseboot.client.version>1.0.0</baseboot.client.version>
-        <baseboot.webapi.version>1.0.0</baseboot.webapi.version>
-        <baseboot.pojo.version>1.0.0</baseboot.pojo.version>
 
         <baseboot.jxl.version>2.6.12</baseboot.jxl.version>
         <baseboot.poi.version>3.13</baseboot.poi.version>
@@ -88,14 +90,8 @@
 
             <dependency>
                 <groupId>com.loyalove</groupId>
-                <artifactId>baseboot-server</artifactId>
-                <version>${baseboot.server.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>com.loyalove</groupId>
-                <artifactId>baseboot-client</artifactId>
-                <version>${baseboot.client.version}</version>
+                <artifactId>baseboot-api</artifactId>
+                <version>${baseboot.api.version}</version>
             </dependency>
 
             <dependency>
@@ -109,8 +105,27 @@
                 <artifactId>baseboot-dao</artifactId>
                 <version>${baseboot.dao.version}</version>
             </dependency>
+
+            <dependency>
+                <groupId>com.loyalove</groupId>
+                <artifactId>baseboot-web</artifactId>
+                <version>${baseboot.web.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.loyalove</groupId>
+                <artifactId>baseboot-app</artifactId>
+                <version>${baseboot.app.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.loyalove</groupId>
+                <artifactId>baseboot-client</artifactId>
+                <version>${baseboot.client.version}</version>
+            </dependency>
             <!--子项目 E-->
 
+            <!--第三方依赖-->
             <dependency>
                 <groupId>org.thymeleaf</groupId>
                 <artifactId>thymeleaf</artifactId>
