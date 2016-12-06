@@ -1,15 +1,16 @@
 package com.loyalove.baseboot.service.auth;
 
+import com.alibaba.dubbo.config.annotation.Service;
+import com.loyalove.baseboot.api.auth.UserService;
 import com.loyalove.baseboot.common.model.Pager;
 import com.loyalove.baseboot.common.util.CollectionUtils;
-import com.loyalove.baseboot.dao.base.UserMapper;
 import com.loyalove.baseboot.dao.auth.UserDAO;
+import com.loyalove.baseboot.dao.base.UserMapper;
 import com.loyalove.baseboot.pojo.UserExample;
 import com.loyalove.baseboot.pojo.UserPO;
 import com.loyalove.baseboot.service.BaseService;
 import com.loyalove.baseboot.vo.UserVO;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
