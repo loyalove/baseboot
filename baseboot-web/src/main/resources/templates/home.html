@@ -21,6 +21,14 @@
         .layui-header .layui-main .logo img {
             max-height: 60px;
         }
+
+        .layui-nav{
+            position: absolute;
+            right: 0;
+            top: 0;
+            padding: 0;
+            background: none;
+        }
     </style>
 </head>
 <body>
@@ -30,6 +38,11 @@
             <a class="logo" href="/">
                 <img src="/static/layui/images/logo.png" alt="layui">
             </a>
+            <ul class="layui-nav">
+                <li class="layui-nav-item">
+                    <a lay-filter="logout-btn" data-href="/logout">退出</a>
+                </li>
+            </ul>
         </div>
     </div>
     <div class="layui-side layui-bg-black">
@@ -99,12 +112,19 @@
 <script>
     layui.use(['element', 'layer'], function () {
         //导航的hover效果、二级菜单等功能，需要依赖element模块
-        var element = layui.element();
-        var layer = layui.layer;
+        var $ = layui.jquery,
+            element = layui.element(),
+            layer = layui.layer;
         //监听导航点击
         element.on('nav(demo)', function (elem) {
             //console.log(elem)
             layer.msg(elem.text());
+        });
+
+        element.on('nav(logout-btn)', function (elem) {
+            //console.log(elem)
+            layer.msg(elem.text());
+            return false;
         });
     });
 </script>
