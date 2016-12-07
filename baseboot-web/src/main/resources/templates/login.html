@@ -104,7 +104,7 @@
 
         form.on('submit(login-btn)', function (data) {
             $.post('/login', data.field, function (data) {
-                layer.msg(data.message, function () {
+                layer.msg(data.message, {time: 1000}, function () {
                     if (data.status === 'OK') window.location.href = "/";
                     layer.closeAll();
                 });
