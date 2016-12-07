@@ -6,7 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>登录</title>
-    <link rel="stylesheet" href="/static/layui/css/layui.css" media="all">
+    <link rel="stylesheet" href="/static/layui/css/layui.css">
 
     <style>
         html {
@@ -79,7 +79,7 @@
 
         <div class="layui-form-item">
             <div style="text-align: center;">
-                <button class="layui-btn" lay-submit="" lay-filter="demo1">登录</button>
+                <button class="layui-btn" lay-submit lay-filter="login-btn">登录</button>
                 <button type="reset" class="layui-btn layui-btn-primary">重置</button>
             </div>
         </div>
@@ -95,15 +95,22 @@
 
 <script src="/static/layui/layui.js"></script>
 <script>
-    layui.use(['element', 'layer'], function () {
+    layui.use(['element', 'form'], function () {
         //导航的hover效果、二级菜单等功能，需要依赖element模块
-        var element = layui.element();
-        var layer = layui.layer;
-        //监听导航点击
-        element.on('nav(demo)', function (elem) {
-            //console.log(elem)
-            layer.msg(elem.text());
-        });
+        var $ = layui.jquery,
+            element = layui.element(),
+            form = layui.form(),
+            layer = layui.layer;
+
+        form.on('submit(login-btn)', function (data) {
+            $.post('/login', data.field, function (data) {
+                layer.alert(data.message, {title: '提示'}, function () {
+                    if (data.status === 'OK') window.location.href = "/";
+                    layer.closeAll();
+                });
+            });
+            return false;
+        })
     });
 </script>
 </body>
