@@ -9,10 +9,9 @@ layui.use(['element', 'layer', 'vue'], function () {
         layer = layui.layer;
 
     var vm = new Vue();
-    console.log(vm);
 
     //监听导航点击
-    element.on('nav(demo)', function (elem) {
+    element.on('nav(sidebar)', function (elem) {
         //console.log(elem)
         layer.msg(elem.text());
     });

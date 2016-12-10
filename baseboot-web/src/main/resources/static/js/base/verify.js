@@ -13,8 +13,8 @@ layui.define(function (exports) {
         ],
         //用户名校验
         username: [
-            /^\S{6,}$/
-            , '用户名不能小于6个字符'
+            /^\S{1,}$/
+            , '不能小于1个字符'
         ],
         //其他校验
         other: function (value) {
